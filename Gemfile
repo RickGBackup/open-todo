@@ -30,3 +30,5 @@ source 'https://rubygems.org'
    gem 'factory_girl_rails'
    gem 'pry-rails'
  end
+ 
+gem 'active_model_serializers', '~> 0.10.0'
