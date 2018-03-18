@@ -1,10 +1,10 @@
 class ListSerializer < ActiveModel::Serializer
-   attributes :id, :title, :user_id, :created_at, :updated_at, :items
+  attributes :id, :title, :user_id, :created_at, :updated_at, :items
+
+  has_many :items, serializer: ItemSerializer::LimitedItemSerializer
   
-  def items
-    # iterate through items. Return an array of item names and IDs.
-    object.items.each_with_object([]) do |item, arr|
-    arr << { name: item.name, id: item.id  }
-    end
+  class LimitedListSerializer < ActiveModel::Serializer
+    attributes  :title, :id
   end
+  
 end
