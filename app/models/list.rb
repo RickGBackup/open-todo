@@ -5,4 +5,9 @@ class List < ActiveRecord::Base
   validates :title, 
             length: { minimum: 1, maximum: 250 }, 
             presence: true
+            
+  # validates :private,
+  #           inclusion: { in: [:true, :open, :viewable} }
+            
+
 end

@@ -14,7 +14,10 @@ class ApiController < ApplicationController
       # check that the inputted pw corresponds to the hashed pw stored for that user
       user = User.find_by(name: name)
       hashed_user_pw = user.password_digest
+     
       test_password(password, hashed_user_pw)
     end
+    rescue
+      render json: { error: "You are unauthorized" }, status: 401
   end
 end

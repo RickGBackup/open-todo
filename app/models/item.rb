@@ -5,4 +5,7 @@ class Item < ActiveRecord::Base
   validates :name, 
             length: { minimum: 1, maximum: 250 }, 
             presence: true
+            
+  validates :completed,
+            inclusion: { in:  [ true, false ] }
 end
