@@ -6,8 +6,8 @@ class List < ActiveRecord::Base
             length: { minimum: 1, maximum: 250 }, 
             presence: true
             
-  # validates :private,
-  #           inclusion: { in: [:true, :open, :viewable} }
+  validates :private,
+            inclusion: { in: [:true, :open, :viewable] }
             
 
 end

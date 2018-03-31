@@ -9,9 +9,6 @@ class User < ActiveRecord::Base
             
   validates :password, presence: true, length: { minimum: 6 }, unless: :password_digest   
   validates :password, length: { minimum: 6 }, allow_blank: true  
-  
-  validates :private,
-            inclusion: { in:  [ true, false ] }
 
   has_secure_password 
 end
